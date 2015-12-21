@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="PNImages" representedClassName="PNImages" syncable="YES">
+        <attribute name="imageMemo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="imageItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PNItem" inverseName="images" inverseEntity="PNItem" syncable="YES"/>
+    </entity>
+    <entity name="PNItem" representedClassName="PNItem" syncable="YES">
+        <attribute name="courseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateReminder" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="itemKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PNImages" inverseName="imageItem" inverseEntity="PNImages" syncable="YES"/>
+        <relationship name="itemUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PNUser" inverseName="items" inverseEntity="PNUser" syncable="YES"/>
+    </entity>
+    <entity name="PNUser" representedClassName="PNUser" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PNItem" inverseName="itemUser" inverseEntity="PNItem" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PNUser" positionX="-387" positionY="51" width="128" height="88"/>
+        <element name="PNItem" positionX="-227" positionY="9" width="128" height="163"/>
+        <element name="PNImages" positionX="-72" positionY="45" width="128" height="88"/>
+    </elements>
+</model>
